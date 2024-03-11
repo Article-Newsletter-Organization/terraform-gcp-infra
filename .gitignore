@@ -1,0 +1,5 @@
+.terraform
+.terraform.*
+*.private.json
+terraform.tfstate*
+*.tfvars
