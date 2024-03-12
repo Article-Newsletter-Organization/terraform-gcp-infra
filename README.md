@@ -24,10 +24,36 @@ Crie um arquivo `terraform.tfvars` na raiz do projeto, esse arquivo será respon
 
 ### Exemplo
 Este exemplo mostra o mínimo de variáveis possível do projeto, existe mais porém opcionais.
-```
+```conf
 project               = "article-newsletter-project"
 region                = "southamerica-east1"
 credentials_file      = "./gcp-credentials.private.json"
 cluster_name          = "anp-k8s-cluster"
 ```
 
+## Configurando o gcloud
+O gcloud é o CLI(Command Line Interface) do GCP, ele é usado nesse projeto para fazer a automatização da configuração do kubectl após a criação do cluster Kubernetes no GKE(Google Kubernetes Engine).
+
+#### Primeiro, logue-se usando Google OAuth2 pelo gcloud:
+```sh
+gcloud auth login
+```
+
+#### Depois, selecione o projeto em que deseja portar o projeto:
+
+```sh
+gcloud config set project <nome-do-seu-projeto>
+```
+
+# Utilização
+Para subir a estrutura após a configuração, basta usar o seguinte comando:
+
+```sh
+terraform apply
+```
+
+Caso queira voltar atrás com a estrutura, basta utilizar o seguinte comando:
+
+```sh
+terraform destroy
+```
