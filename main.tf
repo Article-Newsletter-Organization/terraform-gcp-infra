@@ -21,5 +21,5 @@ module "db_module" {
   # Variables
   region   = var.region
   prem_ips = []
-  net_name = "anp_network"
+  network_name = "anp_network"
 }

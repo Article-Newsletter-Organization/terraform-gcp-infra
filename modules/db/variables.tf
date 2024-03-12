@@ -17,7 +17,7 @@ variable "database_version" {
   description = "Versão do banco de dados"
 }
 
-variable "net_name" {
+variable "network_name" {
   default = "default"
   description = "Nome da rede VPC do banco"
 }

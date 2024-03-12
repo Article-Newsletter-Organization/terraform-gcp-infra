@@ -7,7 +7,7 @@ terraform {
 }
 
 data "google_compute_network" "anp_net" {
-  name = var.net_name
+  name = var.network_name
 }
 
 resource "google_compute_global_address" "private_ip_address" {
