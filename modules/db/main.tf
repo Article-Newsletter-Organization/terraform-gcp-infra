@@ -28,7 +28,7 @@ resource "google_sql_database_instance" "anp_db_instance" {
   name                = "anp-db-instance"
   database_version    = var.database_version
   region              = var.region
-  deletion_protection = false
+  deletion_protection = var.deletion_protection
 
   depends_on = [google_service_networking_connection.private_vpc_connection]
 

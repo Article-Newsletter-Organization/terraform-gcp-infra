@@ -22,3 +22,8 @@ variable "subnet_cidr" {
   default = "192.168.0.0/24"
 }
 
+variable "deletion_protection" {
+  description = "Proteger de deleções não intensionais ou mal intensionadas"
+  type = bool
+  default = false
+}

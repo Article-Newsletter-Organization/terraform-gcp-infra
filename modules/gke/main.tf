@@ -10,7 +10,10 @@ resource "google_container_cluster" "anp_gke_cluster" {
   name     = var.cluster_name
   location = var.region
 
-  deletion_protection = false
+  network    = var.network
+  subnetwork = var.subnetwork
+
+  deletion_protection = var.deletion_protection
 
   node_pool {
     name = "node-pool-default"

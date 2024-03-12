@@ -21,3 +21,9 @@ variable "network_name" {
   default = "default"
   description = "Nome da rede VPC do banco"
 }
+
+variable "deletion_protection" {
+  description = "Proteger de deleções não intensionais ou mal intensionadas"
+  type = bool
+  default = false
+}

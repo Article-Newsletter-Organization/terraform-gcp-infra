@@ -18,8 +18,11 @@ module "GKE_module" {
   depends_on = [module.network_module]
 
   # Variables
-  region       = var.region
-  cluster_name = var.cluster_name
+  region              = var.region
+  cluster_name        = var.cluster_name
+  deletion_protection = var.deletion_protection
+  network             = module.network_module.network_enpoint
+  subnetwork          = module.network_module.subnetwork_enpoint
 }
 
 module "db_module" {
@@ -31,7 +34,8 @@ module "db_module" {
   depends_on = [module.GKE_module]
 
   # Variables
-  region       = var.region
-  prem_ips     = []
-  network_name = "anp_network"
+  region              = var.region
+  prem_ips            = []
+  network_name        = module.network_module.network_name
+  deletion_protection = var.deletion_protection
 }
