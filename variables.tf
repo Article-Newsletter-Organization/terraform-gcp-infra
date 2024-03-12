@@ -16,3 +16,4 @@ variable "cluster_name" {
   description = "Nome do cluster"
   default = "anp-k8s-cluster"
 }
+

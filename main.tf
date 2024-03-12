@@ -10,3 +10,16 @@ module "GKE_module" {
   cluster_name = var.cluster_name
 }
 
+module "db_module" {
+  source = "./modules/db"
+  providers = {
+    google = google
+  }
+
+  depends_on = [module.GKE_module]
+
+  # Variables
+  region   = var.region
+  prem_ips = []
+  net_name = "anp_network"
+}
