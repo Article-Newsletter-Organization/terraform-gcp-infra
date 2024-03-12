@@ -30,7 +30,7 @@ resource "google_sql_database_instance" "anp_db_instance" {
   region              = var.region
   deletion_protection = var.deletion_protection
 
-  depends_on = [google_service_networking_connection.private_vpc_connection]
+  depends_on = [google_service_networking_connection.private_vpc_connection, google_service_account.db_svc_account]
 
   settings {
     tier = var.db_tier
@@ -39,6 +39,11 @@ resource "google_sql_database_instance" "anp_db_instance" {
       ipv4_enabled                                  = true
       private_network                               = data.google_compute_network.anp_net.id
       enable_private_path_for_google_cloud_services = true
+    }
+
+    database_flags {
+      name  = "cloudsql.iam_authentication"
+      value = "on"
     }
   }
 }

@@ -8,7 +8,7 @@ variable "prem_ips" {
 }
 
 variable "db_tier" {
-  default = "db-n1-standard-1"
+  default = "db-f1-micro"
   description = "Tipo da máquina do servidor"
 }
 
