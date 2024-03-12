@@ -17,3 +17,8 @@ variable "cluster_name" {
   default = "anp-k8s-cluster"
 }
 
+variable "subnet_cidr" {
+  description = "Intervalo de Ips que serão gerados pela subnet principal da VPC"
+  default = "192.168.0.0/24"
+}
+
