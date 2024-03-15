@@ -16,6 +16,7 @@ Antes de tudo, é necessário criar um novo projeto e ativar as APIs do GCP que 
 - Cloud Resource Manager API
 - Service Networking API
 - Cloud SQL Admin API
+- Cloud Key Management Service (KMS) API
 
 Após isso, é necessário adicionar no projeto um arquivo json contendo a chave de acesso de uma conta de serviço(IAM). É possível criar uma pelo console do GCP.
 
@@ -57,3 +58,6 @@ Caso queira voltar atrás com a estrutura, basta utilizar o seguinte comando:
 ```sh
 terraform destroy
 ```
+
+# Próximos passos
+Após usar esse repositório para montar os recursos, o próximo passo é acessar o respositório [Article-Newsletter-Organization/ansible-k8s-config](https://github.com/Article-Newsletter-Organization/ansible-k8s-config).
