@@ -1,3 +1,14 @@
+module "kms_module" {
+  source = "./modules/kms"
+  providers = {
+    google = google
+  }
+
+  # Variables
+  region = var.region
+  deletion_protection = var.deletion_protection
+}
+
 module "network_module" {
   source = "./modules/network"
   providers = {
